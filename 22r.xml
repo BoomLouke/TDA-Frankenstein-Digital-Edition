@@ -47,7 +47,7 @@
         the grave worms crawling in the folds of<lb/>
         the flannel; I started 
           <add place="infralinear" hand="#MWS" rend="blackink"><metamark></metamark></add>
-          <note>'^' is used as metamark, close visual resemblance</note>
+          <add>^</add>
           <add place="supralinear" hand="#MWS" rend="blackink">from my sleep</add>
           with horror, a
         <lb/>
@@ -71,7 +71,7 @@
         beheld the wretch — the miserable<lb/>
         monster whom I had created;
           <add place="infralinear" hand="#MWS" rend="blackink"><metamark>-</metamark>
-            <note>'-'is used as metamark, a thick line is used</note>
+          
           </add>
           he hel
           <del type="overwritten" hand="#MWS" rend="blackink"><!-- unclear char --></del>
@@ -79,7 +79,7 @@
         <lb/>
         up the curtain, 
           <add place="infralinear" hand="#MWS" rend="blackink"><metamark>-</metamark>
-            <note>'-'is used as metamark, a thick line is used</note>
+            
           </add>
           and his eyes; if eyes
         <lb/>
@@ -101,8 +101,8 @@
         Oh! no mortal could support <lb/>
         the horror of that countenance.a<lb/>
         mummy
-        <metamark>&#8257;</metamark>
-        <add place="margintop" hand="#MWS" rend="blackink">again</add>
+        <metamark>^</metamark>
+        <add place="supralinear" hand="#MWS" rend="blackink">again</add>
         endued with 
         <del type="crossedOut" hand="#MWS" rend="blackink">life</del>
         <add place="supralinear" hand="#MWS" rend="blackink">animation</add> 
