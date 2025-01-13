@@ -103,16 +103,140 @@ function documentLoader() {
   // Convert the HTMLCollection to an array for forEach compatibility
   var MaryArray = Array.from(visible_mary);
   var PercyArray = Array.from(visible_percy);
-    if (event.target.value == 'both') {
-    //write an forEach() method that shows all the text written and modified by both hand (in black?). The forEach() method of Array instances executes a provided function once for each array element.
-     
-    } else if (event.target.value == 'Mary') {
-     //write an forEach() method that shows all the text written and modified by Mary in a different color (or highlight it) and the text by Percy in black. 
-     
-    } else {
-     //write an forEach() method that shows all the text written and modified by Percy in a different color (or highlight it) and the text by Mary in black.
+  if (event.target.value == 'both') {
+    MaryArray.forEach(function(element) {
+      element.style.backgroundColor = 'transparent';
+      element.style.color = 'black';
+    });
+    PercyArray.forEach(function(element) {
+      element.style.backgroundColor = 'transparent';
+      element.style.color = 'black';
+    });
+  } else if (event.target.value == 'Mary') {
+    MaryArray.forEach(function(element) {
     
-    }
+      element.style.color = '#f1b53d'; 
+    });
+    PercyArray.forEach(function(element) {
+      element.style.backgroundColor = 'transparent';
+      element.style.color = 'black';
+    });
+  } else {
+    PercyArray.forEach(function(element) {
+      element.style.backgroundColor = '#ffda91';
+    });
+    MaryArray.forEach(function(element) {
+      element.style.backgroundColor = 'transparent';
+      element.style.color = 'black';
+    });
   }
+}
 // write another function that will toggle the display of the deletions by clicking on a button
-// EXTRA: write a function that will display the text as a reading text by clicking on a button or another dropdown list, meaning that all the deletions are removed and that the additions are shown inline (not in superscript)
+function toggleDeletions() {
+  var deletions = document.getElementsByTagName('del');
+  var deletionsArray = Array.from(deletions);
+  
+
+  var button = document.getElementById('toggle-deletions');
+  
+  var isVisible = deletionsArray.length > 0 ? 
+    (deletionsArray[0].style.display !== 'none') : true;
+  
+  deletionsArray.forEach(function(element) {
+    element.style.display = isVisible ? 'none' : 'inline';
+  });
+  
+  button.textContent = isVisible ? 'Show Deletions' : 'Hide Deletions';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var button = document.getElementById('toggle-deletions');
+  if (button) {
+    button.addEventListener('click', toggleDeletions);
+  }
+});
+//function that allows to switch from folio to folio:
+function getNextPage() {
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop();
+
+  const pageNum = parseInt(currentPage.substring(0, 2));
+  const side = currentPage.charAt(2);
+  
+  let nextPage;
+  if (side === 'r') {
+
+      nextPage = `${pageNum}v.html`;
+  } else {
+      nextPage = `${pageNum + 1}r.html`;
+  }
+  
+  if (currentPage === '25v.html') {
+      return null;
+  }
+  
+  return nextPage;
+}
+
+function getPreviousPage() {
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop();
+  
+  const pageNum = parseInt(currentPage.substring(0, 2));
+  const side = currentPage.charAt(2);
+  
+  let prevPage;
+  if (side === 'v') {
+      prevPage = `${pageNum}r.html`;
+  } else {
+      prevPage = `${pageNum - 1}v.html`;
+  }
+  
+  if (currentPage === '21r.html') {
+      return null;
+  }
+  
+  return prevPage;
+}
+
+function updateNavigationButtons() {
+  const prevButton = document.getElementById('prevButton');
+  const nextButton = document.getElementById('nextButton');
+  
+  const prevPage = getPreviousPage();
+  const nextPage = getNextPage();
+  
+  if (prevPage) {
+      prevButton.style.display = 'inline-block';
+      prevButton.onclick = () => window.location.href = prevPage;
+  } else {
+      prevButton.style.display = 'none';
+  }
+  
+  if (nextPage) {
+      nextButton.style.display = 'inline-block';
+      nextButton.onclick = () => window.location.href = nextPage;
+  } else {
+      nextButton.style.display = 'none';
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize navigation buttons
+  updateNavigationButtons();
+  
+  // Add event listeners for hover states
+  const buttons = document.querySelectorAll('.navigation-buttons button');
+  buttons.forEach(button => {
+      button.addEventListener('mouseover', function() {
+          if (!this.disabled) {
+              this.style.backgroundColor = '#d99f2b';
+          }
+      });
+      
+      button.addEventListener('mouseout', function() {
+          if (!this.disabled) {
+              this.style.backgroundColor = 'var(--accent-color)';
+          }
+      });
+  });
+});

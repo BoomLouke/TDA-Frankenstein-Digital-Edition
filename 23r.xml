@@ -37,7 +37,8 @@
             <metamark function="pagenumber"><num><hi rend="circled">79</hi></num></metamark>
             <p>
                my view. I did not dare <del type="crossedOut" hand="#MWS" rend="blackink">to</del> return<lb/>
-               to the appartment <add place="supralinear" hand="#MWS" rend="blackink">which</add> I inhabited but<lb/>
+               to the appartment <add place="sublinear" hand="#MWS"><metamark function="insert">^</metamark></add>
+               <add place="supralinear" hand="#MWS" rend="blackink">which</add> I inhabited but<lb/>
                felt impelled to hurry on although<lb/>
                wetted by the <del type="crossedOut" hand="#MWS" rend="blackink">drizzling</del> rain which poured<lb/>
                from a black and comfortless sky.<lb/>

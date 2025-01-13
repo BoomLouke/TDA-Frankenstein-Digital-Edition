@@ -34,7 +34,7 @@
         <pb facs="#p22v"/>
         <metamark function="pagenumber"><num><hi rend="circled">78</hi></num></metamark>
         <p>
-        so hideous as <hi rend="underline">He</hi>... I had gazed on him<lb/>
+        so hideous as <hi rend="u">He</hi>... I had gazed on him<lb/>
         while unfinished; <del rend="crossedOut">and I thought</del> he<lb/>
         was ugly then. But when those muscles<lb/>
         and joints were endued with motion<lb/>
@@ -46,8 +46,8 @@
           every artery: at others I nearly sunk<lb/>
         to the ground <del rend="crossedOut">with</del>
           <add place="above">thro</add> languor and ex-<lb/>
-          treme weakness.<del rend="crossedOut" hand="#PBS">Surely so wretched a</del><lb/>
-          <add place="marginleft" hand="#PBS">X<lb/>
+          treme weakness. <add place="supralinear" hand="#MWS" rend="blackink"> X </add> <del rend="crossedOut" hand="#PBS">Surely so wretched a</del><lb/>
+          <add place="marginleft" hand="#MWS">X<lb/>
             and mingled<lb/>
             with this hor<lb/>
             ror I felt the<lb/>
@@ -73,7 +73,8 @@
         issued into the streets, pacing<add place="supralinear" hand="#PBS">them</add>
           with<lb/>
           quick steps as if I <del rend="crossedOut">ough</del> sought to<lb/>
-        <add place="left_margin" hand="#PBS">avoid</add>the wretch whom I feared every
+        <add place="left_margin" hand="#PBS">avoid</add>
+        the wretch whom I feared every
           turn-<lb/>
           ing in the street would present to<lb/></p></div>
     </body>
